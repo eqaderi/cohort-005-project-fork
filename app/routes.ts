@@ -45,6 +45,8 @@ export default [
     route("admin/categories", "routes/admin.categories.tsx"),
     route("admin/refunds", "routes/admin.refunds.tsx"),
     route("settings", "routes/settings.tsx"),
+    // PROTOTYPE (#6): inbox page for notifications variant B.
+    route("notifications", "routes/notifications.prototype.tsx"),
     route("team", "routes/team.tsx"),
     route("redeem/:code", "routes/redeem.$code.tsx"),
   ]),
