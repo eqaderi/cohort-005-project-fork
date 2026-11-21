@@ -65,9 +65,12 @@ describe("lesson page notes", () => {
     const content = html.indexOf("REST API Fundamentals");
     const upNext = html.indexOf("Up next: ");
     const notes = html.indexOf("Your notes");
-    const discussion = html.indexOf("Questions &amp; Discussion");
+    // The notes placeholder also names "Questions & Discussion", so match the
+    // section's heading rather than the first mention.
+    const discussion = html.search(/<h2[^>]*>Questions &amp; Discussion/);
 
     expect(content).toBeGreaterThan(-1);
+    expect(upNext).toBeGreaterThan(content);
     expect(notes).toBeGreaterThan(content);
     expect(notes).toBeGreaterThan(upNext);
     expect(discussion).toBeGreaterThan(notes);
